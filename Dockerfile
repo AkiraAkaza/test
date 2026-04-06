@@ -1,6 +1,7 @@
 FROM ollama/ollama
 
-RUN ollama pull gemma3:270m
+# start server tạm thời -> pull model -> kill server
+RUN ollama serve & sleep 5 && ollama pull gemma3:270m
 
 EXPOSE 11434
 
